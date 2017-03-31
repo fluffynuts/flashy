@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <script type="text/javascript">
+    function rand(min, max) {
+      return parseInt(Math.random() * (max - min) + min);
+    }
+    function randByte() {
+      return rand(0, 255);
+    }
+    function flash() {
+      var 
+        r = randByte(),
+        g = randByte(),
+        b = randByte();
+      document.body.style.background = [
+        "rgb(",
+        r, ",",
+        g, ",",
+        b, ")"
+      ].join("");
+    }
+    function getEl() {
+      return window.document.getElementById("message");
+    }
+    function checkMessage() {
+      var el = getEl();
+      if (window.outerWidth >= window.screen.availWidth &&
+          window.outerHeight >= window.screen.availHeight) {
+        el.style.display = "none";
+        return;
+      }
+    }
+    function moveMessage() {
+      var el = getEl();
+      el.style.display = "inline-block";
+      el.style.left = rand(0, window.innerWidth - el.offsetWidth);
+      el.style.top = rand(0, window.innerHeight - el.offsetHeight);
+    }
+    function mainloop() {
+      window.setInterval(checkMessage, 100);
+      window.setInterval(moveMessage, 5000);
+      window.setInterval(flash, 10);
+    }
+    </script>
+  </head>
+  <body onload="mainloop()">
+  <div id="message" style="position: absolute; display: inline-block">
+    <h3>This works best in fullscreen. Try pressing F11.</h3>
+  </div>
+  </body>
+</html>
