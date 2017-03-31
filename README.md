@@ -17,7 +17,10 @@ Because I came home to find my screen burned-in after a driver update
 apparently confused the power-saving features on my computer.
 
 ## How to use it?
-Clone this repo or get a link to the static content online and load
+
+You can (hopefully) just open this: [index.html](https://cdn.rawgit.com/fluffynuts/flashy/998afeff/index.html)
+
+Alternatively, Clone this repo and load
 the page in your favourite web browser (disclaimer: this is tested
 in Chrome). Preferably go full-screen (press F11 on most browsers)
 and leave your machine alone for a while. In my case, the ghosting
